@@ -52,11 +52,8 @@ module.exports = function(grunt) {
 
 		watcher.on('change', async() => {
 			var twirlTimer = (function() {
-			  var P = [".", "..", "...", "...."];
-			  var x = 0;
 			  return setInterval(function() {
-			    process.stdout.write("\r" + P[x++]);
-			    x &= 3;
+			    process.stdout.write("\r" + ".");
 			  }, 200);
 			})();
 			var body = grunt.file.read(options.files.bodyPath);
