@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 		watcher.on('change', async() => {
 			var twirlTimer = (function() {
 			  return setInterval(function() {
-			    process.stdout.write("\r" + ".");
+			    process.stdout.write(".");
 			  }, 200);
 			})();
 			var body = grunt.file.read(options.files.bodyPath);
