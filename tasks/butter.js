@@ -26,7 +26,8 @@ module.exports = function(grunt) {
 			},
 			files: {
 				bodyPath: "dist/index_dev.html" // Path to the file containing your HTML code
-			}
+			},
+			parttwo: false
 		});
 
 		chokidar.watch('.', {ignored: /(^|[\/\\])\../}).on('all', (event, path) => {
@@ -52,9 +53,12 @@ module.exports = function(grunt) {
 
 		watcher.on('change', async() => {
 			var twirlTimer = (function() {
+			  var P = ["UPDATING NODE   ", "UPDATING NODE.  ", "UPDATING NODE.. ", "UPDATING NODE..."];
+			  var x = 0;
 			  return setInterval(function() {
-			    process.stdout.write(".");
-			  }, 200);
+			    process.stdout.write("\r" + P[x++]);
+			    x &= 3;
+			  }, 300);
 			})();
 			var body = grunt.file.read(options.files.bodyPath);
 			await browser.goTo(options.drupal.nodeURL);
@@ -67,5 +71,6 @@ module.exports = function(grunt) {
 		});
 
 		navigateWebsite();
+
   });
 }
