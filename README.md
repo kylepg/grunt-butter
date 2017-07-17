@@ -6,7 +6,7 @@ Automatically update/publish a node body in Drupal (via Headless Chrome).
 #
 ### Install
 ```
-npm install drupal-butter
+npm install grunt-butter
 ```
 
 ### Configuration 
