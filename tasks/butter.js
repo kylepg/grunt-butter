@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 			  return setInterval(function() {
 			    process.stdout.write("\r" + P[x++]);
 			    x &= 3;
-			  }, 250);
+			  }, 100);
 			})();
 			var body = grunt.file.read(options.files.bodyPath);
 			await browser.goTo(options.drupal.nodeURL);
@@ -65,6 +65,7 @@ module.exports = function(grunt) {
 			await browser.setValue(options.drupal.DOM.node.body, body);
 			await browser.click(options.drupal.DOM.node.submit);
 			await browser.wait(3000);
+			clearInterval(twirlTimer);
 			grunt.log.ok('NODE UPDATED'['green'].bold);
 		});
 
