@@ -1,0 +1,15 @@
+{
+  "name": "drupal-butter",
+  "version": "0.1.0",
+  "description": "Automatically update/publish a node body in Drupal (via Headless Chrome).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle George (http://www.kylegeorge.io)",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "simple-headless-chrome": "^2.5.10"
+  }
+}
