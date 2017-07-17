@@ -51,6 +51,14 @@ module.exports = function(grunt) {
 		};
 
 		watcher.on('change', async() => {
+			var twirlTimer = (function() {
+			  var P = ["\\", "|", "/", "-"];
+			  var x = 0;
+			  return setInterval(function() {
+			    process.stdout.write("\r" + P[x++]);
+			    x &= 3;
+			  }, 250);
+			})();
 			var body = grunt.file.read(options.files.bodyPath);
 			await browser.goTo(options.drupal.nodeURL);
 			await browser.focus(options.drupal.DOM.node.body);
