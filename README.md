@@ -17,7 +17,7 @@ Inlude the following in your Gruntfile.js
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    kyle: {
+    butter: {
       options: {
         headless: false, // If false, you can actually see the browser navigate with your instructions. 
         drupal: {
