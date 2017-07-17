@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   'use strict'
-	grunt.registerTask('kyle', 'String Replace Task', function() {
+	grunt.registerTask('butter', 'Automatically update/publish a node body in Drupal (via Headless Chrome).', function() {
 		const HeadlessChrome = require('simple-headless-chrome');
 		const chokidar = require('chokidar');
 		const done = this.async();
