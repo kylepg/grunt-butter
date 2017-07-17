@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 			  return setInterval(function() {
 			    process.stdout.write("\r" + P[x++]);
 			    x &= 3;
-			  }, 50);
+			  }, 200);
 			})();
 			var body = grunt.file.read(options.files.bodyPath);
 			await browser.goTo(options.drupal.nodeURL);
