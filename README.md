@@ -17,16 +17,14 @@ Inlude the following in your Gruntfile.js
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    butter: {
+    kyle: {
       options: {
-        browser: {
-          headless: false // If you turn this off, you can actually see the browser navigate with your instructions. 
-        },
+        headless: false, // If false, you can actually see the browser navigate with your instructions. 
         drupal: {
-          loginURL: "http://www.google.com", // Drupal admin login (https://admin.nba.com//<team_name>/user)
-          username: "[username]",
-          password: "[password]",
-          nodeURL: "", // Drupal admin login (https://admin.nba.com//<team_name>/user)
+          loginURL: "https://www.google.com", // Drupal admin login (https://admin.nba.com//<team_name>/user)
+          username: "<username>",
+          password: "<password>",
+          nodeURL: "<nodeURL>", // Edit node URL (http://www.nba.com/<team_name>/node/<nodeID>/edit)
           DOM: {
             login: {
               username:'#edit-name--2',
@@ -34,17 +32,17 @@ module.exports = function(grunt) {
               submit: "#edit-submit--2"
             },
             node: {
-              body: "#edit-body-und-0-value" // Path to the file containing the code you wish to paste into the
+              body: "#edit-body-und-0-value",
+              submit: "#edit-save-publish"
             }
           }
         },
         files: {
-          bodyHTML: "dist/index_dev"
+          bodyPath: "dist/index_dev.html" // Path to the file containing your HTML code
         }
       }
     }
   });
-  grunt.loadNpmTasks('grunt-butter')
-  grunt.registerTask('default',['butter'])
+  grunt.loadNpmTasks('grunt-butter');
 };
 ```

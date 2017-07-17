@@ -1,5 +1,5 @@
 {
-  "name": "drupal-butter",
+  "name": "grunt-butter",
   "version": "0.1.0",
   "description": "Automatically update/publish a node body in Drupal (via Headless Chrome).",
   "main": "index.js",
